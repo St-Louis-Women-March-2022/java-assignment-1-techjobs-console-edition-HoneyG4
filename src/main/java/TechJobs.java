@@ -10,7 +10,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -59,12 +59,12 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();
 
                 if (searchField.equals("all")) {
-                    printJobs(JobData.findByValue(searchTerm));
+                    printJobs(JobData.findByValue(searchTerm.toLowerCase()));
                 } else {
-                    printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+                    printJobs(JobData.findByColumnAndValue(searchField, searchTerm.toLowerCase()));
                 }
             }
         }
@@ -112,14 +112,44 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        // check our arraylist for data. If there is no data in our csv that matches the prompter is notified.
+        if (someJobs.size() == 0)
+            System.out.println("No Information Available.");
+        else{
+            for (int num = 0; num < someJobs.size(); num++) {
+                System.out.println("\n*****");
 
-        System.out.println("printJobs is not implemented yet");
+                for (Map.Entry<String, String> job : someJobs.get(num).entrySet()) {
+                    System.out.println(job.getKey() + ": " + job.getValue());
+                }
+                System.out.println("*****");
+                //else loop through the hashmap and print the data that matches the request.
+            }
+        }
     }
-}
+
+
+
+
+
+
+
+
+       // for (HashMap<String, String> job : someJobs) {
+
+            //if (someJobs.contains(job)) {
+            }//else {
+              //  System.out.println("please enter valid input");
+           // }
+
+
+
+
+    ;
