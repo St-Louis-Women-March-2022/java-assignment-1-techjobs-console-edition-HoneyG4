@@ -122,7 +122,7 @@ public class TechJobs {
         // check our arraylist for data. If there is no data in our csv that matches the prompter is notified.
         if (someJobs.size() == 0)
             System.out.println("No Information Available.");
-        else{
+        else {
             for (int num = 0; num < someJobs.size(); num++) {
                 System.out.println("\n*****");
 
@@ -136,20 +136,4 @@ public class TechJobs {
     }
 
 
-
-
-
-
-
-
-       // for (HashMap<String, String> job : someJobs) {
-
-            //if (someJobs.contains(job)) {
-            }//else {
-              //  System.out.println("please enter valid input");
-           // }
-
-
-
-
-    ;
+}
