@@ -121,7 +121,7 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // check our arraylist for data. If there is no data in our csv that matches the prompter is notified.
         if (someJobs.size() == 0)
-            System.out.println("No Information Available.");
+            System.out.println("No Results");
         else {
             for (int num = 0; num < someJobs.size(); num++) {
                 System.out.println("\n*****");
